@@ -7,10 +7,10 @@ from src.infra.config import Base
 class RoleTypes(enum.Enum):
     """Define role types"""
 
-    admin = {1: "admin"}
-    receptionist = {2: "recepcionista"}
-    groomer = {3: "tosador"}
-    client = {4: "cliente"}
+    admin = {"id": 1, "name": "admin"}
+    receptionist = {"id": 2, "name": "recepcionista"}
+    groomer = {"id": 3, "name": "tosador"}
+    client = {"id": 4, "name": "cliente"}
 
 
 class User(Base):
@@ -35,8 +35,9 @@ class User(Base):
             and self.email == other.email
             and self.password == other.password
             and self.phone_number == other.phone_number
-            and self.role == other.role
+            and self.role.value["name"] == other.role
         ):
             return True
         else:
+            print(self.role.value)
             return False
