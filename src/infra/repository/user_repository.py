@@ -27,7 +27,11 @@ class UserRepository:
                 db_connection.session.close()
 
     @classmethod
-    def select_user(cls, user_id=None, email=None):
+    def select_user(
+        cls,
+        user_id: int = None,
+        email: int = None,
+    ):
         with DBConnectionHandler() as db_connection:
             query_data = []
             try:
