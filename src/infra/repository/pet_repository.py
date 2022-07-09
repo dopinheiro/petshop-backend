@@ -1,4 +1,4 @@
-from src.domain import Pet
+from src.domain.models import Pet
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import Pet as PetModel
 

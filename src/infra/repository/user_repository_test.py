@@ -1,6 +1,6 @@
 from faker import Faker
 from .user_repository import UserRepository
-from src.domain.user import User
+from src.domain.models import User
 from src.infra.config import DBConnectionHandler
 
 faker = Faker()

@@ -1,6 +1,6 @@
 from faker import Faker
 from .pet_repository import PetRepository
-from src.domain import Pet
+from src.domain.models import Pet
 from src.infra.config import DBConnectionHandler
 from datetime import date
 

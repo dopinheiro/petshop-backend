@@ -1,4 +1,4 @@
-from src.domain import User
+from src.domain.models import User
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import User as UserModel
 
