@@ -1,9 +1,10 @@
 from src.domain.models import User
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import User as UserModel
+from src.data.interfaces import UserRepositoryInterface
 
 
-class UserRepository:
+class UserRepository(UserRepositoryInterface):
     """Class to manage users table"""
 
     @classmethod
@@ -30,7 +31,7 @@ class UserRepository:
     def select_user(
         cls,
         user_id: int = None,
-        email: int = None,
+        email: str = None,
     ):
         with DBConnectionHandler() as db_connection:
             query_data = []
