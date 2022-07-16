@@ -1,9 +1,10 @@
 from typing import List
+from src.data.interfaces import UserRepositoryInterface
 from src.domain.models import User
 from src.domain.test import mock_user
 
 
-class UserRepositorySpy:
+class UserRepositorySpy(UserRepositoryInterface):
     def __init__(self):
         self.insert_user_params = {}
         self.select_user_params = {}
